@@ -1,104 +1,191 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Politique de Confidentialité</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Politique de Confidentialité — Baiboly Protestanta</title>
+  <meta name="color-scheme" content="light dark">
   <style>
-    body {
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9fafb;
-      color: #333;
-      margin: 0;
-      padding: 0 20px;
-      line-height: 1.6;
+    :root{
+      --bg: #f7f7fb;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted:#6b7280;
+      --brand:#2563eb;
+      --ok:#059669;
+      --warn:#d97706;
+      --border:#e5e7eb;
+      --shadow: 0 10px 30px rgba(0,0,0,.06);
+      --radius: 18px;
     }
-    header {
-      background-color: #0052cc;
-      color: white;
-      padding: 20px 0;
-      text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#0b1020;
+        --card:#0f1428;
+        --text:#e5e7eb;
+        --muted:#9ca3af;
+        --brand:#60a5fa;
+        --ok:#34d399;
+        --warn:#fbbf24;
+        --border:#1f2a44;
+        --shadow: 0 10px 30px rgba(0,0,0,.35);
+      }
     }
-    header h1 {
-      margin: 0;
-      font-weight: 600;
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+    a{color:var(--brand);text-decoration:none}
+    a:hover{text-decoration:underline}
+    .container{max-width:880px;margin:40px auto;padding:0 20px}
+    .card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
+    header.hero{padding:36px 28px;border-bottom:1px solid var(--border);background:
+      radial-gradient(1200px 600px at 5% 0%, rgba(37,99,235,.10), transparent 50%),
+      radial-gradient(1000px 500px at 95% 10%, rgba(5,150,105,.10), transparent 50%);}
+    .badge{display:inline-flex;gap:8px;align-items:center;font-weight:600;color:var(--ok);background:rgba(5,150,105,.08);border:1px solid rgba(5,150,105,.25);padding:6px 10px;border-radius:999px}
+    h1{margin:12px 0 6px;font-size:clamp(24px,3vw,34px);line-height:1.2}
+    .subtitle{color:var(--muted);margin:0}
+    section{padding:26px 28px;border-top:1px solid var(--border)}
+    h2{font-size:clamp(18px,2.2vw,22px);margin:0 0 12px}
+    p{margin:10px 0}
+    ul{margin:10px 0 0 20px}
+    .grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+    .grid .box{border:1px solid var(--border);border-radius:14px;padding:14px;background:linear-gradient(180deg,rgba(37,99,235,.05),transparent)}
+    .kvs{display:grid;grid-template-columns:190px 1fr;gap:12px;align-items:start}
+    .kvs .k{color:var(--muted)}
+    .notice{border-left:4px solid var(--brand);padding:12px 14px;background:rgba(37,99,235,.06);border-radius:10px}
+    .table{width:100%;border-collapse:separate;border-spacing:0 10px}
+    .table th{font-size:14px;color:var(--muted);text-align:left;padding:0 12px}
+    .row{display:grid;grid-template-columns:220px 1fr 150px;gap:12px;align-items:center;border:1px solid var(--border);background:var(--card);border-radius:12px;padding:12px}
+    .tag{display:inline-block;font-size:12px;padding:4px 8px;border-radius:999px;border:1px solid var(--border);color:var(--muted)}
+    footer{padding:18px 28px;color:var(--muted);font-size:14px}
+    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;border-radius:12px;border:1px solid var(--border);background:var(--card);}
+    .btn.primary{background:var(--brand);color:#fff;border-color:transparent}
+    @media (max-width:760px){
+      .grid{grid-template-columns:1fr}
+      .kvs{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
     }
-    main {
-      max-width: 800px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    }
-    h2 {
-      color: #0052cc;
-      margin-top: 40px;
-      margin-bottom: 15px;
-      font-weight: 600;
-      border-bottom: 2px solid #0052cc;
-      padding-bottom: 5px;
-    }
-    p {
-      margin-bottom: 16px;
-    }
-    a {
-      color: #0052cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    footer {
-      text-align: center;
-      color: #777;
-      font-size: 14px;
-      margin: 50px 0 20px;
+    @media print{
+      body{background:#fff}
+      .card, header.hero{box-shadow:none}
+      .btn,.actions{display:none}
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Politique de Confidentialité</h1>
-  </header>
-  <main>
-    <p>
-      Votre vie privée est importante pour nous. Cette politique explique quelles données nous collectons, comment nous les utilisons, et vos droits concernant vos informations personnelles.
-    </p>
+  <div class="container">
+    <div class="card">
 
-    <h2>Données collectées</h2>
-    <p>
-      Notre application utilise Google AdMob pour afficher des publicités. AdMob collecte certaines données afin de personnaliser les annonces que vous voyez. Nous ne collectons pas directement vos données personnelles.
-    </p>
+      <header class="hero">
+        <span class="badge" aria-label="Confiance & transparence">✔️ Ne collecte aucune donnée personnelle</span>
+        <h1>Politique de Confidentialité</h1>
+        <p class="subtitle">Baiboly Protestanta — Madagascar</p>
+        <div class="kvs" style="margin-top:12px">
+          <div class="k">Dernière mise à jour</div><div class="v">20 août 2025</div>
+          <div class="k">Contact</div><div class="v"><a href="mailto:mtk.mg.dev@gmail.com">mtk.mg.dev@gmail.com</a></div>
+        </div>
+      </header>
 
-    <h2>Publicités personnalisées</h2>
-    <p>
-      Les publicités diffusées dans notre application peuvent être personnalisées en fonction de vos intérêts grâce aux services publicitaires de Google. Vous pouvez gérer ou désactiver la personnalisation des annonces via les <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">paramètres de publicité Google</a>.
-    </p>
+      <section aria-labelledby="intro">
+        <h2 id="intro">1. Introduction</h2>
+        <p>
+          Cette application mobile <strong>Baiboly Protestanta</strong> est destinée à la lecture de la Bible et à l’écoute de la radio chrétienne.
+          Nous respectons votre vie privée : <strong>l’application ne collecte, ne suit et ne partage aucune donnée personnelle</strong>.
+        </p>
+        <p class="notice">
+          Aucun compte, aucune analyse comportementale, aucun identifiant publicitaire n’est recueilli par l’application.
+        </p>
+      </section>
 
-    <h2>Sécurité des données</h2>
-    <p>
-      Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos informations. Cependant, veuillez noter qu’aucune méthode de transmission sur Internet ou de stockage électronique n’est totalement sécurisée.
-    </p>
+      <section aria-labelledby="collecte">
+        <h2 id="collecte">2. Données que nous collectons</h2>
+        <p><strong>Aucune</strong>. Nous ne collectons ni nom, ni e-mail, ni localisation, ni fichiers, ni identifiants d’appareil.</p>
+      </section>
 
-    <h2>Vos droits</h2>
-    <p>
-      Vous pouvez accéder aux paramètres de confidentialité de votre appareil et gérer vos préférences concernant les annonces personnalisées. Pour toute question sur vos données, contactez-nous à : <a href="mailto:mtk.mg.dev@gmail.com">mtk.mg.dev@gmail.com</a>.
-    </p>
+      <section aria-labelledby="permissions">
+        <h2 id="permissions">3. Permissions & finalités</h2>
+        <table class="table" role="table" aria-describedby="permissions">
+          <thead>
+            <tr>
+              <th scope="col">Permission</th>
+              <th scope="col">Pourquoi</th>
+              <th scope="col">Statut</th>
+            </tr>
+          </thead>
+        </table>
+        <div class="row" role="row">
+          <div><strong>Microphone</strong> (RECORD_AUDIO)</div>
+          <div>Permet l’<strong>enregistrement vocal</strong> à votre demande. Les enregistrements sont <strong>stockés localement</strong> sur votre téléphone et restent sous votre contrôle.</div>
+          <div><span class="tag">Sur consentement</span></div>
+        </div>
+        <div class="row" role="row">
+          <div><strong>Stockage / Fichiers</strong></div>
+          <div>Sauvegarder, lire et supprimer vos <strong>enregistrements vocaux</strong> sur l’appareil. <em>Aucun envoi vers un serveur.</em></div>
+          <div><span class="tag">Local uniquement</span></div>
+        </div>
+        <div class="row" role="row">
+          <div><strong>Internet</strong> (ACCESS_NETWORK_STATE / INTERNET)</div>
+          <div>Accéder au flux <strong>radio chrétienne</strong> via votre connexion (Wi-Fi / données). <em>Aucune donnée personnelle n’est transmise.</em></div>
+          <div><span class="tag">Lecture radio</span></div>
+        </div>
+      </section>
 
-    <h2>Modifications de cette politique</h2>
-    <p>
-      Cette politique peut être mise à jour de temps en temps. Nous vous encourageons à la consulter régulièrement pour être informé des changements.
-    </p>
+      <section aria-labelledby="utilisation">
+        <h2 id="utilisation">4. Utilisation, stockage et partage</h2>
+        <ul>
+          <li><strong>Enregistrements vocaux</strong> : créés uniquement si vous lancez l’enregistrement ; <strong>stockés localement</strong> ; vous pouvez les supprimer à tout moment.</li>
+          <li><strong>Radio</strong> : utilise uniquement la connexion réseau pour <strong>lire le flux audio</strong>. Nous ne collectons ni historique ni préférences.</li>
+          <li><strong>Partage</strong> : <em>aucun</em> partage de données à des tiers. L’application ne transmet pas vos informations personnelles (car aucune n’est collectée).</li>
+        </ul>
+      </section>
 
-    <h2>Contact</h2>
-    <p>
-      Pour toute question ou demande concernant cette politique, vous pouvez nous contacter par e-mail à <a href="mailto:mtk.mg.dev@gmail.com">mtk.mg.dev@gmail.com</a>.
-    </p>
-  </main>
-  <footer>
-    &copy; 2025 Baiboly Protestant Malagasy - Tous droits réservés
-  </footer>
+      <section aria-labelledby="mineurs">
+        <h2 id="mineurs">5. Jeunes utilisateurs</h2>
+        <p>L’application est adaptée à tout public. Aucune donnée personnelle n’étant collectée, aucune information relative aux enfants n’est traitée.</p>
+      </section>
+
+      <section aria-labelledby="securite">
+        <h2 id="securite">6. Sécurité & contrôle utilisateur</h2>
+        <div class="grid">
+          <div class="box">
+            <strong>Local et hors-ligne</strong>
+            <p>Vos enregistrements restent sur votre appareil. Désinstallez l’app ou supprimez les fichiers pour retirer toutes les données.</p>
+          </div>
+          <div class="box">
+            <strong>Contrôle des permissions</strong>
+            <p>Vous pouvez <strong>refuser</strong> le micro ; l’app fonctionnera sans l’enregistrement vocal.</p>
+          </div>
+        </div>
+      </section>
+
+      <section aria-labelledby="juridique">
+        <h2 id="juridique">7. Base légale & territoire</h2>
+        <p>
+          L’usage du microphone repose sur votre <strong>consentement explicite</strong> (que vous pouvez retirer depuis les paramètres du système).
+          Cette politique s’applique aux utilisateurs à <strong>Madagascar</strong> et ailleurs. Nous ne réalisons pas de profilage ni de suivi.
+        </p>
+      </section>
+
+      <section aria-labelledby="modifs">
+        <h2 id="modifs">8. Modifications de cette politique</h2>
+        <p>Si cette politique change, la date de mise à jour ci-dessus sera révisée. Les changements ne réduiront pas vos droits sans notification adéquate.</p>
+      </section>
+
+      <section aria-labelledby="contact">
+        <h2 id="contact">9. Contact</h2>
+        <p>Pour toute question : <a href="mailto:mtk.mg.dev@gmail.com">mtk.mg.dev@gmail.com</a></p>
+        <div class="actions">
+          <a class="btn primary" href="mailto:mtk.mg.dev@gmail.com">Nous contacter</a>
+          <a class="btn" href="#" onclick="window.print();return false;">Imprimer / PDF</a>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="y"></span> Baiboly Protestanta — Politique de Confidentialité. Aucune collecte de données personnelles.
+      </footer>
+
+    </div>
+  </div>
+  <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
